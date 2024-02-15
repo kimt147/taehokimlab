@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var playButton = document.getElementById('playButton');
     var video = document.getElementById('backgroundVideo');
-    var lastTime = 0; // Keep track of the last time to detect looping
+    var lastTime = 0; 
     
     playButton.addEventListener('click', function() {
         video.muted = false;
@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
     video.addEventListener('timeupdate', function() {
         var currentTime = video.currentTime;
 
-        // Detect if the video has looped
+      
         if (currentTime < lastTime) {
-            bubblesShown = resetBubblesShown(); // Reset the bubblesShown status for all bubbles
-            resetBubblesDisplay(); // Reset display and opacity for all bubbles
+            bubblesShown = resetBubblesShown(); 
+            resetBubblesDisplay(); 
         }
-        lastTime = currentTime; // Update lastTime to the current time
+        lastTime = currentTime; 
 
-        // Your existing showBubbleAtTime function calls
         showBubbleAtTime(currentTime, 0, 'bubble1', bubblesShown);
         showBubbleAtTime(currentTime, 1, 'bubble2', bubblesShown);
         showBubbleAtTime(currentTime, 4, 'bubble3', bubblesShown);
@@ -46,9 +45,9 @@ function resetBubblesDisplay() {
     var bubbles = document.querySelectorAll('.bubble-container--left, .bubble-container--right');
     bubbles.forEach(function(bubble) {
         bubble.style.display = 'none';
-        bubble.style.opacity = 0; // Reset opacity to make them fade in again
+        bubble.style.opacity = 0; 
         setTimeout(function() {
-            bubble.style.display = 'flex'; // Required for opacity transition
+            bubble.style.display = 'flex';
         }, 10);
     });
 }
@@ -80,8 +79,8 @@ function showBubbleAtTime(currentTime, targetTime, bubbleId, bubblesShown) {
             bubble.style.display = 'flex';
             setTimeout(function() {
                 bubble.style.opacity = 1;
-                if (bubbleId === 'bubble13') { // Assuming bubble13 is the last one
-                    scrollToBottom(); // Smooth scroll to the bottom of the page
+                if (bubbleId === 'bubble13') {
+                    scrollToBottom(); 
                 }
             }, 10);
             bubblesShown[bubbleId] = true;

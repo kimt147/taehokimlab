@@ -88,37 +88,41 @@ main{
   }
 
   .bubble-container--right:not(:first-child) {
-    margin-top: -3.5rem; /* Pull subsequent containers closer to the previous one */
+    margin-top: -3.5rem; 
 }
-/* Assuming consecutive messages are direct children of the bubble container */
 .bubble-container--right .bubble--blue:not(:first-child),
 .bubble-container--left .bubble--gray:not(:first-child) {
-    margin-top: 0.5rem; /* Reduce the top margin for consecutive messages */
+    margin-top: 0.5rem; 
 }
 
 .bubble-container--left:not(:first-child) {
-    margin-top: -3.5rem; /* Pull subsequent containers closer to the previous one */
+    margin-top: -3.5rem; 
 }
-/* Assuming consecutive messages are direct children of the bubble container */
 .bubble-container--left .bubble--blue:not(:first-child),
 .bubble-container--right .bubble--gray:not(:first-child) {
-    margin-top: 0.5rem; /* Reduce the top margin for consecutive messages */
+    margin-top: 0.5rem; 
 }
 
 #playButton {
-    border: none; /* Removes the border */
-    background: none; /* Removes the background */
-    cursor: pointer; /* Changes the cursor to a pointer */
-  }
-  
-  #playButton img {
-    width: 50px; /* Example size, adjust as needed */
+    position: fixed; /* Use fixed or absolute positioning for centering */
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%); /* Centers the button exactly in the middle */
+    z-index: 10; /* Ensures the button is above other elements */
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#playButton img {
+    width: 200px;
     height: auto;
-  }
+}
   
   .bubble-container--left, .bubble-container--right {
-    display: none; /* 초기 상태에서는 보이지 않도록 설정 */
-    opacity: 0; /* 페이딩 효과를 위해 투명도를 0으로 설정 */
-    transition: opacity 1s ease-in-out; /* 부드러운 페이딩 효과 적용 */
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
   }
   
