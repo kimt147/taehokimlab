@@ -1,0 +1,124 @@
+html{
+    margin: 0;
+    font-size: 7.8px;
+    font-family: 'Helvetica', 'sans-serif';
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 5rem 2rem;
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    z-index: 2;
+    position: relative;
+}
+
+.bubble-container--left{
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.bubble-container--right{
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    align-items: end;
+}
+
+.bubble--gray{
+    color: black;
+    padding: 1rem;
+    max-width: 75%;
+    font-size: 3rem;
+}
+
+.bubble--blue{
+    color: white;
+    padding: 1rem;
+    max-width: 75%;
+    font-size: 3rem;
+}
+
+.bubble--gray{
+    background-color: #e9e9eb;
+    border-radius: 3rem 3rem 3rem 0rem;
+    transition: background-color 300ms;
+}
+
+.bubble--gray:hover{
+    background-color: red;
+
+}
+
+.bubble--blue{
+    background-color: #2a99fd;
+    border-radius: 3rem 3rem 0rem 3rem;
+    text-align: right;
+    transition: background-color 300ms;
+}
+
+.bubble--blue:hover{
+    background-color: blue;
+}
+
+.bubble--name{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .bubble-container--right:not(:first-child) {
+    margin-top: -3.5rem; /* Pull subsequent containers closer to the previous one */
+}
+/* Assuming consecutive messages are direct children of the bubble container */
+.bubble-container--right .bubble--blue:not(:first-child),
+.bubble-container--left .bubble--gray:not(:first-child) {
+    margin-top: 0.5rem; /* Reduce the top margin for consecutive messages */
+}
+
+.bubble-container--left:not(:first-child) {
+    margin-top: -3.5rem; /* Pull subsequent containers closer to the previous one */
+}
+/* Assuming consecutive messages are direct children of the bubble container */
+.bubble-container--left .bubble--blue:not(:first-child),
+.bubble-container--right .bubble--gray:not(:first-child) {
+    margin-top: 0.5rem; /* Reduce the top margin for consecutive messages */
+}
+
+#playButton {
+    border: none; /* Removes the border */
+    background: none; /* Removes the background */
+    cursor: pointer; /* Changes the cursor to a pointer */
+  }
+  
+  #playButton img {
+    width: 50px; /* Example size, adjust as needed */
+    height: auto;
+  }
+  
+  .bubble-container--left, .bubble-container--right {
+    display: none; /* 초기 상태에서는 보이지 않도록 설정 */
+    opacity: 0; /* 페이딩 효과를 위해 투명도를 0으로 설정 */
+    transition: opacity 1s ease-in-out; /* 부드러운 페이딩 효과 적용 */
+  }
+  
