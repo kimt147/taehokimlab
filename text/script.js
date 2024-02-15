@@ -65,3 +65,26 @@ function showBubbleAtTime(currentTime, targetTime, bubbleId, bubblesShown) {
         }
     }
 }
+
+function scrollToBottom() {
+    window.scrollTo({ 
+        left: 0, 
+        top: document.body.scrollHeight, 
+        behavior: 'smooth' 
+    });
+}
+function showBubbleAtTime(currentTime, targetTime, bubbleId, bubblesShown) {
+    if (currentTime >= targetTime && !bubblesShown[bubbleId]) {
+        var bubble = document.getElementById(bubbleId);
+        if (bubble) {
+            bubble.style.display = 'flex';
+            setTimeout(function() {
+                bubble.style.opacity = 1;
+                if (bubbleId === 'bubble13') { // Assuming bubble13 is the last one
+                    scrollToBottom(); // Smooth scroll to the bottom of the page
+                }
+            }, 10);
+            bubblesShown[bubbleId] = true;
+        }
+    }
+}
