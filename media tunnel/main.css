@@ -61,6 +61,37 @@ body {
     height: 70%;
     object-fit: cover;
     }    
+
+
+    .toggle-container{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 52rem;
+        height: 19rem;
+        border: 1px solid white;
+        background: transparent;
+        border-radius: 999rem;
+    }
+    
+    .toggle-circle {
+        width: 17.7rem;
+        height: 17.7rem;
+        border-radius: 999rem;
+        background: rgba(0, 0, 0,.5);
+        position: absolute;
+        left: .5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform .5s ease;
+    }
+    
+    .toggle-container.is-active {
+        .toggle-circle {
+        transform: translateY(-50%) translateX(33.3rem);
+        }
+    }
     
 
     
@@ -72,6 +103,37 @@ body {
     .flex-container {
         flex-direction:column;
     }
+
+    .toggle-container{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 19rem;
+        height: 52rem;
+        border: 1px solid white;
+        background: transparent;
+        border-radius: 999rem;
+    }
+    
+    .toggle-circle {
+        width: 17.7rem;
+        height: 17.7rem;
+        border-radius: 999rem;
+        background: rgba(0, 0, 0,.5);
+        position: absolute;
+        left: 50%;
+        top: 0.5%;
+        transform: translateX(-50%);
+        transition: transform .5s ease;
+    }
+    
+    .toggle-container.is-active {
+        .toggle-circle {
+        transform: translateX(-50%) translateY(33.3rem);
+        }
+    }
+    
     }
 
 @media screen and (min-width: 500px) and (max-width:949px){
@@ -93,32 +155,3 @@ body {
         
     }
 
-.toggle-container{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 52rem;
-    height: 19rem;
-    border: 1px solid white;
-    background: transparent;
-    border-radius: 999rem;
-}
-
-.toggle-circle {
-    width: 17.7rem;
-    height: 17.7rem;
-    border-radius: 999rem;
-    background: rgba(0, 0, 0,.5);
-    position: absolute;
-    left: .5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform .5s ease;
-}
-
-.toggle-container.is-active {
-    .toggle-circle {
-    transform: translateY(-50%) translateX(33.3rem);
-    }
-}
