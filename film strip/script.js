@@ -1,25 +1,41 @@
-let toggles = document.querySelectorAll('.toggle')
-let gridItems = document.querySelectorAll('.grid-item')
+const gridContainer = document.querySelector('.grid-container');
+const gridItems = document.querySelectorAll('.grid-item');
+const itemWidth = gridItems[0].offsetWidth + parseInt(window.getComputedStyle(gridItems[0]).marginLeft) + parseInt(window.getComputedStyle(gridItems[0]).marginRight);
+let scrollPosition = 0;
+let isHovering = false;
 
-toggles.forEach((toggle, index) => {
-    let toggleType = toggle.dataset.type
+function cloneGridItems() {
+  const clonedItems = [];
+  gridItems.forEach(item => {
+    const clone = item.cloneNode(true);
+    clonedItems.push(clone);
+  });
+  clonedItems.forEach(clone => gridContainer.appendChild(clone));
+}
 
-    toggle.addEventListener('click', (e) =>{
-        gridItems.forEach((item, index) => {
-            if (item.dataset.type == toggleType){
-                item,classList.remove('hidden')
-            } else{
-                    item.classList.add('hidden')
-                }
-            })
-        })
-    })
+function scrollImages() {
+  const speed = isHovering ? 0.9 : 1; 
 
-toggles.forEach((element, index) => {
-    console.log('element', index); 
-    console.log('index', index); 
-})
+  scrollPosition -= speed; 
+  gridContainer.style.transform = `translateX(${scrollPosition}px)`;
 
-natureBtn.addEventListener('click', () => {
-    console.log('')
-})
+  if (Math.abs(scrollPosition) >= gridContainer.scrollWidth - gridContainer.offsetWidth) {
+    scrollPosition = 0;
+  }
+
+  requestAnimationFrame(scrollImages);
+}
+
+gridContainer.style.width = `${itemWidth * gridItems.length}px`;
+
+cloneGridItems();
+
+scrollImages();
+
+gridContainer.addEventListener('mouseenter', () => {
+  isHovering = true;
+});
+
+gridContainer.addEventListener('mouseleave', () => {
+  isHovering = false;
+});
