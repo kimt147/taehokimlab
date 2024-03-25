@@ -1,0 +1,26 @@
+[
+    {"type":"pasta",
+    "course": "main",
+    "price": "20"
+},
+{"type":"apples",
+"course": "appetizer",
+"price": "7"
+},
+{"type":"ribeye",
+"course": "main",
+"price": "40"
+},
+{"type":"gum",
+"course": "dessert",
+"price": "1"
+},
+{"type":"croissant",
+"course": "appetizer",
+"price": "4"
+},
+{"type":"omakase",
+"course": "main",
+"price": "300"
+}
+]

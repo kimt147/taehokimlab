@@ -1,0 +1,105 @@
+html{
+    margin: 0;
+    font-size: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.desktop-image--left,
+.tablet-image--left,
+.mobile-image--left {
+    display: none;
+}
+
+.desktop-image--left{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    }
+
+
+    .tablet-image--left {
+        width: 100vw; /* 뷰포트의 너비에 맞춤 */
+        height: 100vh; /* 뷰포트의 높이에 맞춤 */
+        object-fit: cover; /* 이미지가 컨테이너를 가득 채우도록 하면서, 가로 세로 비율을 유지 */
+    }
+     
+
+.mobile-image--left{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    }
+        
+
+
+
+.center-text {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+    color: white;
+    text-align: center;
+    z-index: 10; /* 확실한 가독성을 위해 다른 요소 위에 표시 */
+}
+
+    body.invert-colors {
+        filter: invert(1);
+    }
+    
+    .revealed-area {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(
+          circle 280px at 50% 50%,
+          transparent 10%,
+          rgba(0, 0, 0, 0.98)
+        );
+        pointer-events: none;
+      }
+
+    
+@media screen and (max-width: 499px) {
+    .mobile-image--left,
+    .mobile-image--right{
+        display: block;
+    }
+    .flex-container {
+        flex-direction:column;
+    }
+
+    }
+
+@media screen and (min-width: 500px) and (max-width:949px){
+    .tablet-image--left,
+    .tablet-image--right{
+        display: block;
+    }
+
+    .flex-container {
+        flex-direction:column;
+        }
+    }
+
+@media screen and (min-width: 950px){
+    .desktop-image--left,
+    .desktop-image--right{
+        display: block;
+    }
+        
+    }
+
