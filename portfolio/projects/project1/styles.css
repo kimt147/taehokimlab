@@ -1,0 +1,77 @@
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial Narrow;
+    border-bottom: 1.3px solid rgb(174, 174, 174);
+}
+
+h1 {
+    margin: 0;
+    font-family: Arial Narrow;
+    font-size: 1rem;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black; /* 인스타그램과 Contact 링크를 검은색으로 설정 */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(174, 174, 174); /* 마우스 호버시 회색으로 변경 */
+}
+
+body {
+    font-family: Arial Narrow, sans-serif;
+}
+.project-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+.video-container {
+    grid-column: span 2;
+    text-align: center;
+}
+.video-container video {
+    width: 100%;
+    max-width: 1300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-title, .project-description {
+    font-size: 18px;
+}
+
+.project-info {
+    padding: 10px 20px;
+    border-radius: 5px;
+    padding-bottom: 60px; /* title과 description 사이의 간격 조정 */
+}
+
+.project-title {
+    font-size: 20px; /* title 폰트 사이즈 증가 */
+}
+
+.project-description {
+    font-size: 16px; /* description 폰트 사이즈 증가 */
+    line-height: 1.6; /* 줄 간격 조정 */
+    flex-grow: 1; /* 가능한 넓은 영역을 차지하도록 함 */
+    width: 200%;
+}

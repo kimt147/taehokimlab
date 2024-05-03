@@ -1,0 +1,100 @@
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial Narrow;
+    border-bottom: 1.3px solid rgb(174, 174, 174);
+}
+
+h1 {
+    margin: 0;
+    font-family: Arial Narrow;
+    font-size: 1rem;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black; /* 인스타그램과 Contact 링크를 검은색으로 설정 */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(174, 174, 174); /* 마우스 호버시 회색으로 변경 */
+}
+
+/* Grid styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-top: 40px;
+    align-items: center; /* 그리드 아이템들을 세로로 중앙 정렬 */
+}
+
+@media screen and (max-width: 1014px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 688px) {
+    .grid-container {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* 그리드 아이템의 높이를 100%로 설정 */
+}
+
+.grid-item img, .grid-item video {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.caption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Arial Narrow', sans-serif;
+    text-decoration: none;
+}
+
+.caption a {
+    color: black; /* 링크 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.caption a:hover {
+    color: rgb(174, 174, 174); /* 마우스 호버시 회색으로 변경 */
+    text-decoration: none; /* 마우스 호버시 밑줄 제거 */
+}
+
+/* 위 스타일에 다음과 같이 !important 를 추가해 보세요. */
+.caption a {
+    color: black !important; /* 링크 색상 */
+    text-decoration: none !important; /* 링크 밑줄 제거 */
+}
+
+.caption a:hover {
+    color: rgb(174, 174, 174) !important; /* 마우스 호버시 회색으로 변경 */
+    text-decoration: none !important; /* 마우스 호버시 밑줄 제거 */
+}
