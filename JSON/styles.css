@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 18px 0; /* 상단과 하단 패딩만 적용 */
-    background-color: black;
+    background-color: white;
     color: white;
     font-family: 'Helvetica Neue', sans-serif;
     line-height: 1.6;
@@ -39,7 +39,7 @@ a:hover {
 }
 
 .Title {
-    color: white;
+    color: skyblue;
     position: absolute; /* 텍스트 위치 조정을 위해 */
     top: 14%; /* 화면의 중앙으로 설정 */
     left: 50%; /* 화면의 중앙으로 설정 */
@@ -84,7 +84,6 @@ a:hover {
     width: 70%; 
     height: auto; 
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
     transition: transform .3s ease, opacity 0.2s ease; /* 이미지 크기 변경 및 투명도 변화 시 부드럽게 변화하도록 설정 */
   }
   
@@ -99,9 +98,9 @@ a:hover {
     transform: translate(-50%, -50%);
     font-family: "Helvetica", sans-serif;
     width: 200px;
-    font-size: 17px;
+    font-size: 12px;
     font-weight: 400;
-    color: white;
+    color: black;
     padding: 10px;
     border-radius: 5px;
     opacity: 0; /* 초기에는 보이지 않도록 설정 */
