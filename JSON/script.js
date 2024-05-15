@@ -61,7 +61,48 @@ document.addEventListener("DOMContentLoaded", function() {
             "title": "Image12",
             "what": "Bunny",
             "cuteness": 1
+        },
+        {
+            "title": "Image13",
+            "what": "Bread",
+            "cuteness": 1
+        },
+        {
+            "title": "Image14",
+            "what": "Polar Bear",
+            "cuteness": 0.2
+        },
+        {
+            "title": "Image15",
+            "what": "Pudding",
+            "cuteness": 1
+        },
+        {
+            "title": "Image16",
+            "what": "Bunny",
+            "cuteness": 0.6
+        },
+        {
+            "title": "Image17",
+            "what": "Puppy",
+            "cuteness": 1
+        },
+        {
+            "title": "Image18",
+            "what": "Dust",
+            "cuteness": 1
+        },
+        {
+            "title": "Image19",
+            "what": "Teddy",
+            "cuteness": 0.9
+        },
+        {
+            "title": "Image20",
+            "what": "Miffy",
+            "cuteness": 0.5
         }
+
     ]
     
 
