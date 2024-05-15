@@ -79,3 +79,34 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const likeButton = document.getElementById('like-button');
+            const dislikeButton = document.getElementById('dislike-button');
+            const okayButton = document.getElementById('okay-button');
+            const gridContainer = document.getElementById('grid-container');
+        
+            likeButton.addEventListener('click', () => {
+                filterImages('like');
+            });
+        
+            dislikeButton.addEventListener('click', () => {
+                filterImages('dislike');
+            });
+        
+            okayButton.addEventListener('click', () => {
+                filterImages('okay');
+            });
+        
+            function filterImages(type) {
+                const gridItems = gridContainer.getElementsByClassName('grid-item');
+                for (let item of gridItems) {
+                    if (item.getAttribute('data-type') === type) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            }
+        });
+        
